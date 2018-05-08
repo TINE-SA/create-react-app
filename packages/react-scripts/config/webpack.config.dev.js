@@ -139,7 +139,7 @@ module.exports = {
               eslintPath: require.resolve('eslint'),
               // @remove-on-eject-begin
               baseConfig: {
-                extends: [require.resolve('eslint-config-react-app')],
+                extends: [require.resolve('eslint-config-react-app'), require.resolve('eslint-config-sonar')],
               },
               ignore: false,
               useEslintrc: false,
