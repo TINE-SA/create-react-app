@@ -106,6 +106,7 @@ module.exports = function(
     appPath,
     '.template.dependencies.json'
   );
+
   if (fs.existsSync(templateDependenciesPath)) {
     const templateDependencies = require(templateDependenciesPath).dependencies;
     args = args.concat(
@@ -182,6 +183,7 @@ module.exports = function(
   }
   console.log();
   console.log('Happy hacking!');
+  console.log(chalk.red('Custom react-scripts applied!'));
 };
 
 function isReactInstalled(appPackage) {
