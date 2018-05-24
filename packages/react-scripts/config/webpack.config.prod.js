@@ -151,6 +151,11 @@ module.exports = {
               },
               ignore: false,
               useEslintrc: false,
+              "rules": {
+                "filenames/match-exported": 0,
+                "react/prop-types": 1,
+                "react/display-name": 1
+              }
               // @remove-on-eject-end
             },
             loader: require.resolve('eslint-loader'),
