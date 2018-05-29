@@ -42,11 +42,6 @@ module.exports = (resolve, rootDir, isEjecting) => {
     transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$'],
     moduleNameMapper: {
       '^react-native$': 'react-native-web',
-      // CUSTOM aliases
-      "^components(.*)$": "<rootDir>/src/components$1",
-      "^containers(.*)$": "<rootDir>/src/containers$1",
-      "^util(.*)$": "<rootDir>/src/util$1",
-      "^services(.*)$": "<rootDir>/src/services$1",
     },
     moduleFileExtensions: [
       'web.js',
