@@ -39,8 +39,10 @@ module.exports = function(
   appPackage.scripts = {
     start: 'react-scripts start',
     build: 'react-scripts build',
-    test: 'react-scripts test --env=jsdom',
+    test: 'npm run unittest',
     eject: 'react-scripts eject',
+    autotest: 'react-scripts test --env=jsdom',
+    unittest: 'react-scripts test --env=jsdom --coverage'
   };
 
   fs.writeFileSync(
