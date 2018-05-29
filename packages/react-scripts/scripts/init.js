@@ -45,6 +45,8 @@ module.exports = function(
     unittest: 'react-scripts test --env=jsdom --coverage'
   };
 
+  appPackage.homepage = `https://web.husdyrfag.io/${appName}`
+
   fs.writeFileSync(
     path.join(appPath, 'package.json'),
     JSON.stringify(appPackage, null, 2)
