@@ -37,12 +37,12 @@ module.exports = function(
 
   // Setup the script rules
   appPackage.scripts = {
-    start: 'react-scripts start',
-    build: 'react-scripts build',
+    start: 'cross-env NODE_PATH=src react-scripts start',
+    build: 'cross-env NODE_PATH=src react-scripts build',
     test: 'npm run unittest',
     eject: 'react-scripts eject',
-    autotest: 'react-scripts test --env=jsdom',
-    unittest: 'react-scripts test --env=jsdom --coverage'
+    autotest: 'cross-env NODE_PATH=src react-scripts test --env=jsdom',
+    unittest: 'cross-env NODE_PATH=src react-scripts test --env=jsdom --coverage'
   };
 
   appPackage.homepage = '.';
