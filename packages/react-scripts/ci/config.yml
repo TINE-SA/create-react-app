@@ -1,0 +1,4 @@
+project_name: react-scripts
+git_repo_name: create-react-app
+git_path_prefix: packages/react-scripts
+branch_name: customizations-for-tine
