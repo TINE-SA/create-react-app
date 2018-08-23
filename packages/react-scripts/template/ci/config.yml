@@ -1,0 +1,7 @@
+project_name: <%= concourse-project-name %>
+site_name: <%= concourse-site-name %>
+git_repo_name: <%= concourse-git-repo-name %>
+slack_channel: <%= concourse-slack-channel %>
+deploy_trigger_prod: false
+deploy_trigger_staging: false
+deploy_trigger_dev: true
