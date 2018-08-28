@@ -3,11 +3,9 @@ import './loaded-time.css';
 
 class LoadedTime extends Component {
   render() {
-    const {loadedTime} = this.props;
+    const { loadedTime } = this.props;
 
-    return (
-      <div className="loaded-time">Loaded at: {loadedTime}</div>
-    );
+    return <div className="loaded-time">Loaded at: {loadedTime}</div>;
   }
 }
 
