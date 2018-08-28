@@ -48,7 +48,6 @@ module.exports = function(
     start: 'cross-env NODE_PATH=src react-scripts start',
     build: 'cross-env NODE_PATH=src react-scripts build',
     test: '(npm run prettiercheck || exit 1) && npm run unittest',
-    eject: 'react-scripts eject',
     autotest: 'cross-env NODE_PATH=src react-scripts test --env=jsdom',
     unittest:
       'cross-env NODE_PATH=src react-scripts test --env=jsdom --coverage',
