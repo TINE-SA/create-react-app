@@ -35,14 +35,25 @@ module.exports = function(
   // Copy over some of the devDependencies
   appPackage.dependencies = appPackage.dependencies || {};
 
+  // Setup precommit for prettier
+  appPackage.lintStaged = {
+    'src/**/*.{js,jsx,json,css}': [
+      'prettier --single-quote --write',
+      'git add',
+    ],
+  };
+
   // Setup the script rules
   appPackage.scripts = {
     start: 'cross-env NODE_PATH=src react-scripts start',
     build: 'cross-env NODE_PATH=src react-scripts build',
-    test: 'npm run unittest',
+    test: '(npm run prettiercheck || exit 1) && npm run unittest',
     eject: 'react-scripts eject',
     autotest: 'cross-env NODE_PATH=src react-scripts test --env=jsdom',
-    unittest: 'cross-env NODE_PATH=src react-scripts test --env=jsdom --coverage'
+    unittest:
+      'cross-env NODE_PATH=src react-scripts test --env=jsdom --coverage',
+    precommit: 'lint-staged',
+    prettiercheck: 'prettier-check src/**/*.{js,jsx,json,css} --single-quote',
   };
 
   appPackage.homepage = '.';
