@@ -131,10 +131,29 @@ module.exports = function(
     fs.unlinkSync(templateDependenciesPath);
   }
 
+  // Define custom dependencies
+  const customDeps = {
+    husky: '^0.14.3',
+    'lint-staged': '^7.2.2',
+    prettier: '^1.14.2',
+    'prettier-check': '^2.0.0',
+  };
+
+  args = args.concat(
+    Object.keys(customDeps).map(key => {
+      return `${key}@${customDeps[key]}`;
+    })
+  );
+
   // Install react and react-dom for backward compatibility with old CRA cli
   // which doesn't install react and react-dom along with react-scripts
   // or template is presetend (via --internal-testing-template)
-  if (!isReactInstalled(appPackage) || template) {
+  // or custom dependencies have not been installed yet.
+  if (
+    !isReactInstalled(appPackage) ||
+    template ||
+    !areCustomDepsInstalled(appPackage, customDeps)
+  ) {
     console.log(`Installing react and react-dom using ${command}...`);
     console.log();
 
@@ -207,4 +226,14 @@ function isReactInstalled(appPackage) {
     typeof dependencies.react !== 'undefined' &&
     typeof dependencies['react-dom'] !== 'undefined'
   );
+}
+
+function areCustomDepsInstalled(appPackage, customDeps) {
+  const dependencies = appPackage.dependencies || {};
+
+  // Check that all entries in customDeps have a
+  // corresponding entry in appPackage.dependencies
+  return Object.keys(customDeps).every(dep => {
+    typeof dependencies[dep] !== 'undefined';
+  });
 }
