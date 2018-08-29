@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
 
+import StyledApp from './styled-app';
+import StyledIntro from './styled-intro';
 import Header from 'components/header';
 import LoadedTime from 'components/loaded-time';
 import api from 'services/api';
@@ -11,7 +12,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      loadedTime: null,
+      loadedTime: null
     };
   }
 
@@ -22,7 +23,7 @@ class App extends Component {
   performApiCallOrSomethingElseAsync() {
     api.getSomething().then(() => {
       this.setState({
-        loadedTime: new Date(),
+        loadedTime: new Date()
       });
     });
   }
@@ -31,18 +32,18 @@ class App extends Component {
     const { loadedTime } = this.state;
 
     return (
-      <div className="App">
+      <StyledApp>
         <Header />
-        <p className="App-intro">
+        <StyledIntro>
           To get started, edit <code>src/containers/App.js</code> and save to
           reload.
-        </p>
+        </StyledIntro>
         {loadedTime && (
           <LoadedTime
             loadedTime={dateUtil.getDisplayDateFromDateObject(loadedTime)}
           />
         )}
-      </div>
+      </StyledApp>
     );
   }
 }
