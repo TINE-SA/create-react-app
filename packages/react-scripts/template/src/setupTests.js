@@ -1,10 +1,10 @@
 // README: This is the file Jest looks for if/when we need to do setup for tests.
 
-// import Enzyme from 'enzyme';
-// import EnzymeAdapter from 'enzyme-adapter-react-16';
+import Enzyme from 'enzyme';
+import EnzymeAdapter from 'enzyme-adapter-react-16';
 
-// // Setup enzyme's react adapter
-// Enzyme.configure({ adapter: new EnzymeAdapter() });
+// Setup enzyme's react adapter
+Enzyme.configure({ adapter: new EnzymeAdapter() });
 
 // const localStorageMock = {
 //     getItem: jest.fn(),

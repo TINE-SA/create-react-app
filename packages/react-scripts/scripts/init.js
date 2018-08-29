@@ -40,6 +40,13 @@ module.exports = function(
     'src/**/*.{js,jsx,json,css}': ['prettier --write', 'git add'],
   };
 
+  // Add custom jest configuration
+  appPackage.jest = {
+    'snapshotSerializers': [
+       'enzyme-to-json/serializer'
+    ]
+  };
+
   // Setup the script rules
   appPackage.scripts = {
     start: 'cross-env NODE_PATH=src react-scripts start',
@@ -136,6 +143,10 @@ module.exports = function(
     prettier: '^1.14.2',
     'prettier-check': '^2.0.0',
     'styled-components': '^3.4.5',
+    'enzyme': '^3.5.0',
+    'enzyme-adapter-react-16': '^1.3.0',
+    'enzyme-to-json': '^3.3.4',
+    'jest-styled-components': '^6.1.1'
   };
 
   args = args.concat(

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadedTime renders 1`] = `
+.c0 {
+  font-style: italic;
+}
+
+<LoadedTime
+  loadedTime="01.12.2022"
+>
+  <styled.div>
+    <div
+      className="c0"
+    >
+      Loaded at 01.12.2022
+    </div>
+  </styled.div>
+</LoadedTime>
+`;
