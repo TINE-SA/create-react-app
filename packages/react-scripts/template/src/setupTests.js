@@ -13,5 +13,3 @@ Enzyme.configure({ adapter: new EnzymeAdapter() });
 // };
 
 // global.localStorage = localStorageMock;
-
-console.log('Completed setup for tests');
