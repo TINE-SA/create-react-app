@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Header from 'components/header/header';
-import LoadedTime from 'components/loaded-time/loaded-time';
+import Header from 'components/header';
+import LoadedTime from 'components/loaded-time';
 import api from 'services/api';
 import dateUtil from 'util/date-formatting';
 

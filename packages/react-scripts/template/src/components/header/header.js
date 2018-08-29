@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import './header.css';
-
+import StyledHeaderWrapper from './styled-header-wrapper';
+import StyledHeaderTitle from './styled-header-title';
+import lang from 'constants/lang';
 class Header extends Component {
   render() {
     return (
-      <header className="header-wrapper">
-        <h1 className="header-title">Welcome to React</h1>
-      </header>
+      <StyledHeaderWrapper>
+        <StyledHeaderTitle>{lang.APP_HEADER_TITLE}</StyledHeaderTitle>
+      </StyledHeaderWrapper>
     );
   }
 }
