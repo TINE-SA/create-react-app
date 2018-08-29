@@ -49,8 +49,8 @@ module.exports = function(
     unittest:
       'cross-env NODE_PATH=src react-scripts test --env=jsdom --coverage',
     precommit: 'lint-staged',
-    prettier: 'prettier --write src/**/*.{js,jsx,json,css}',
-    prettiercheck: 'prettier-check src/**/*.{js,jsx,json,css}',
+    prettier: `prettier --write 'src/**/*.{js,jsx,json,css}'`,
+    prettiercheck: `prettier-check 'src/**/*.{js,jsx,json,css}'`,
   };
 
   appPackage.homepage = '.';
