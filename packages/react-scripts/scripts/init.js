@@ -37,10 +37,7 @@ module.exports = function(
 
   // Setup precommit for prettier
   appPackage.lintStaged = {
-    'src/**/*.{js,jsx,json,css}': [
-      'prettier --single-quote --write',
-      'git add',
-    ],
+    'src/**/*.{js,jsx,json,css}': ['prettier --write', 'git add'],
   };
 
   // Setup the script rules
@@ -52,7 +49,8 @@ module.exports = function(
     unittest:
       'cross-env NODE_PATH=src react-scripts test --env=jsdom --coverage',
     precommit: 'lint-staged',
-    prettiercheck: 'prettier-check src/**/*.{js,jsx,json,css} --single-quote',
+    prettier: 'prettier --write src/**/*.{js,jsx,json,css}',
+    prettiercheck: 'prettier-check src/**/*.{js,jsx,json,css}',
   };
 
   appPackage.homepage = '.';
@@ -137,6 +135,7 @@ module.exports = function(
     'lint-staged': '^7.2.2',
     prettier: '^1.14.2',
     'prettier-check': '^2.0.0',
+    'styled-components': '^3.4.5',
   };
 
   args = args.concat(
