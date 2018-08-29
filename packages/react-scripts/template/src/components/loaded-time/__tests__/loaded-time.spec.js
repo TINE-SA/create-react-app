@@ -2,11 +2,11 @@ import React from 'react';
 import { mount } from 'enzyme';
 import 'jest-styled-components';
 
-import Header from './';
+import LoadedTime from '../';
 
-describe('Header', () => {
+describe('LoadedTime', () => {
   it('renders', () => {
-    const wrapper = mount(<Header />);
+    const wrapper = mount(<LoadedTime loadedTime="01.12.2022" />);
 
     expect(wrapper).toMatchSnapshot();
   });
