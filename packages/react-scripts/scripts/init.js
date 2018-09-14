@@ -35,11 +35,6 @@ module.exports = function(
   // Copy over some of the devDependencies
   appPackage.dependencies = appPackage.dependencies || {};
 
-  // Setup precommit for prettier
-  appPackage.lintStaged = {
-    'src/**/*.{js,jsx,json,css}': ['prettier --write', 'git add'],
-  };
-
   // Add custom jest configuration
   appPackage.jest = {
     'snapshotSerializers': [
@@ -51,13 +46,8 @@ module.exports = function(
   appPackage.scripts = {
     start: 'cross-env NODE_PATH=src react-scripts start',
     build: 'cross-env NODE_PATH=src react-scripts build',
-    test: '(npm run prettiercheck || exit 1) && npm run unittest',
-    autotest: 'cross-env NODE_PATH=src react-scripts test --env=jsdom',
-    unittest:
-      'cross-env NODE_PATH=src react-scripts test --env=jsdom --coverage',
-    precommit: 'lint-staged',
-    prettier: `prettier --write 'src/**/*.{js,jsx,json,css}'`,
-    prettiercheck: `prettier-check 'src/**/*.{js,jsx,json,css}'`,
+    test: 'cross-env NODE_PATH=src react-scripts test --env=jsdom --coverage',
+    autotest: 'cross-env NODE_PATH=src react-scripts test --env=jsdom'
   };
 
   appPackage.homepage = '.';
@@ -138,10 +128,6 @@ module.exports = function(
 
   // Define custom dependencies
   const customDeps = {
-    husky: '^0.14.3',
-    'lint-staged': '^7.2.2',
-    prettier: '^1.14.2',
-    'prettier-check': '^2.0.0',
     'styled-components': '^3.4.5',
     'enzyme': '^3.5.0',
     'enzyme-adapter-react-16': '^1.3.0',
