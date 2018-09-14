@@ -2,3 +2,4 @@ project_name: react-scripts
 git_repo_name: create-react-app
 git_path_prefix: packages/react-scripts
 git_branch: customizations-for-tine
+slack_channel: team_husdyrfag_ci
