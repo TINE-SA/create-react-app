@@ -141,15 +141,18 @@ module.exports = {
               // TODO: consider separate config for production,
               // e.g. to enable no-console and no-debugger only in production.
               baseConfig: {
-                extends: [require.resolve('eslint-config-react-app'), require.resolve('eslint-config-sonar')],
+                extends: [
+                  require.resolve('eslint-config-react-app'),
+                  require.resolve('eslint-config-sonar'),
+                ],
               },
               ignore: false,
               useEslintrc: false,
-              "rules": {
-                "filenames/match-exported": 0,
-                "react/prop-types": 1,
-                "react/display-name": 1
-              }
+              rules: {
+                'filenames/match-exported': 0,
+                'react/prop-types': 1,
+                'react/display-name': 1,
+              },
               // @remove-on-eject-end
             },
             loader: require.resolve('eslint-loader'),
@@ -184,6 +187,7 @@ module.exports = {
               // @remove-on-eject-end
               compact: true,
             },
+            plugins: ['relay'],
           },
           // The notation here is somewhat confusing.
           // "postcss" loader applies autoprefixer to our CSS.

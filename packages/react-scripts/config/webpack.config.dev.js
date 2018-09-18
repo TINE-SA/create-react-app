@@ -133,15 +133,18 @@ module.exports = {
               eslintPath: require.resolve('eslint'),
               // @remove-on-eject-begin
               baseConfig: {
-                extends: [require.resolve('eslint-config-react-app'), require.resolve('eslint-config-sonar')],
+                extends: [
+                  require.resolve('eslint-config-react-app'),
+                  require.resolve('eslint-config-sonar'),
+                ],
               },
               ignore: false,
               useEslintrc: false,
-              "rules": {
-                "filenames/match-exported": 0,
-                "react/prop-types": 1,
-                "react/display-name": 1
-              }
+              rules: {
+                'filenames/match-exported': 0,
+                'react/prop-types': 1,
+                'react/display-name': 1,
+              },
               // @remove-on-eject-end
             },
             loader: require.resolve('eslint-loader'),
@@ -180,6 +183,7 @@ module.exports = {
               // directory for faster rebuilds.
               cacheDirectory: true,
             },
+            plugins: ['relay'],
           },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
