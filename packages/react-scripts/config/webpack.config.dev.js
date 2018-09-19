@@ -182,7 +182,7 @@ module.exports = {
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
               cacheDirectory: true,
-              plugins: ['relay'],
+              plugins: [require.resolve('babel-plugin-relay')],
             },
           },
           // "postcss" loader applies autoprefixer to our CSS.
